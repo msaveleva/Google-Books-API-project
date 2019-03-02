@@ -6,6 +6,7 @@ target 'GoogleBooksAPIProject' do
 
   # Pods for GoogleBooksAPIProject
   pod 'Alamofire', '~> 4.8.1'
+  pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'SwiftyJSON', '~> 4.2.0'
 
   target 'GoogleBooksAPIProjectTests' do

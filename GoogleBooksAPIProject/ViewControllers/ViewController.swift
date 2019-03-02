@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
 
 class ViewController: UIViewController {
 
@@ -49,22 +50,23 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(parameterString)") else {
+        let urlString = "https://www.googleapis.com/books/v1/volumes?q=\(parameterString)"
+        guard let url = URL(string: urlString) else {
             completion(nil)
             return
         }
         
-        Alamofire.request(url, method: .get, parameters: nil).validate().responseJSON { response in
+        Alamofire.request(url).responseObject { (response: DataResponse<VolumeListResponse>) in
             guard response.result.isSuccess else {
                 completion(nil)
                 return
             }
-            
+
             guard let value = response.result.value else {
                 completion(nil)
                 return
             }
-            
+
             completion(value)
         }
     }
