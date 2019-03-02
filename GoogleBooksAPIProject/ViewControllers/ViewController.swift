@@ -12,8 +12,13 @@ import AlamofireObjectMapper
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var volumes = [Volume]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func tappedSearchButton(_ sender: Any) {
@@ -30,11 +35,13 @@ class ViewController: UIViewController {
             }
 
             self?.fetchBooksWithName(name: searchText, completion: { result in
-                guard let serverData = result else {
+                guard let volumeListResponse = result as? VolumeListResponse,
+                        let volumes = volumeListResponse.items else {
                     return
                 }
                 
-                print(serverData)
+                self?.volumes = volumes
+                self?.tableView.reloadData()
             });
         }
         
@@ -73,3 +80,19 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return volumes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
+        cell.textLabel?.text = volumes[indexPath.row].title
+        
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    
+}
