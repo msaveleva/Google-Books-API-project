@@ -29,6 +29,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Jio-rz-3sS" kind="show" identifier="showDetail" id="nAB-XA-bok"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -60,6 +63,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="5l0-WX-YoX">
+            <objects>
+                <viewController id="Jio-rz-3sS" customClass="DetailViewController" customModule="GoogleBooksAPIProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cw4-oj-srA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37M-gs-G90">
+                                <rect key="frame" x="22" y="82" width="337" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-fd-8qB">
+                                <rect key="frame" x="22" y="111" width="337" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGG-zp-xKQ">
+                                <rect key="frame" x="22" y="133" width="337" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hGG-zp-xKQ" firstAttribute="leading" secondItem="45F-tr-U44" secondAttribute="leading" constant="22" id="4Xk-zk-6lS"/>
+                            <constraint firstItem="45F-tr-U44" firstAttribute="trailing" secondItem="Ub3-fd-8qB" secondAttribute="trailing" constant="16" id="8hS-Rd-kha"/>
+                            <constraint firstItem="37M-gs-G90" firstAttribute="top" secondItem="45F-tr-U44" secondAttribute="top" constant="18" id="9E6-7H-7YM"/>
+                            <constraint firstItem="Ub3-fd-8qB" firstAttribute="leading" secondItem="45F-tr-U44" secondAttribute="leading" constant="22" id="LTI-Fy-cp3"/>
+                            <constraint firstItem="45F-tr-U44" firstAttribute="trailing" secondItem="hGG-zp-xKQ" secondAttribute="trailing" constant="16" id="b1K-hG-Pit"/>
+                            <constraint firstItem="45F-tr-U44" firstAttribute="trailing" secondItem="37M-gs-G90" secondAttribute="trailing" constant="16" id="dcc-xg-eHE"/>
+                            <constraint firstItem="37M-gs-G90" firstAttribute="leading" secondItem="45F-tr-U44" secondAttribute="leading" constant="22" id="jzo-xH-tG3"/>
+                            <constraint firstItem="Ub3-fd-8qB" firstAttribute="top" secondItem="37M-gs-G90" secondAttribute="bottom" constant="8" id="lSS-ye-U6h"/>
+                            <constraint firstItem="hGG-zp-xKQ" firstAttribute="top" secondItem="Ub3-fd-8qB" secondAttribute="bottom" constant="8" id="zmY-aZ-YLq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="45F-tr-U44"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="Ub3-fd-8qB" id="8d2-BF-9Ye"/>
+                        <outlet property="descriptionLabel" destination="hGG-zp-xKQ" id="oV8-Xh-pFB"/>
+                        <outlet property="titleLabel" destination="37M-gs-G90" id="BiT-ht-aDR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ac-4d-ydu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lhp-I5-aNh">

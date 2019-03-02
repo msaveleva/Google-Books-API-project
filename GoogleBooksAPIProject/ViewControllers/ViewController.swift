@@ -77,6 +77,17 @@ class ViewController: UIViewController {
             completion(value)
         }
     }
+    
+    // MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let controller = segue.destination as? DetailViewController {
+                let volume = volumes[indexPath.row]
+                controller.volume = volume
+            }
+        }
+    }
 
 }
 
