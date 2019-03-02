@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Google Books API-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleBooksAPIProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tI4-Vj-Dw9">
+                    <navigationItem key="navigationItem" title="Google Books API" id="tI4-Vj-Dw9">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="M47-8L-bhD">
                             <connections>
                                 <action selector="tappedSearchButton:" destination="BYZ-38-t0r" id="j9I-9L-ipG"/>
