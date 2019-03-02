@@ -18,6 +18,7 @@
 		3FD4987A222A8A5B00678F1E /* VolumeListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD49879222A8A5B00678F1E /* VolumeListResponse.swift */; };
 		3FD4987C222A8D0900678F1E /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4987B222A8D0900678F1E /* Volume.swift */; };
 		3FD498AC222A929C00678F1E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD498AB222A929C00678F1E /* DetailViewController.swift */; };
+		3FD498AF222A980800678F1E /* VolumeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD498AE222A980800678F1E /* VolumeTableViewCell.swift */; };
 		881D50C2C0296AA89D563CB6 /* Pods_GoogleBooksAPIProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554AC9DE47E4855437EC58F7 /* Pods_GoogleBooksAPIProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		3FD49879222A8A5B00678F1E /* VolumeListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeListResponse.swift; sourceTree = "<group>"; };
 		3FD4987B222A8D0900678F1E /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		3FD498AB222A929C00678F1E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FD498AE222A980800678F1E /* VolumeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTableViewCell.swift; sourceTree = "<group>"; };
 		554AC9DE47E4855437EC58F7 /* Pods_GoogleBooksAPIProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleBooksAPIProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		637CB63149F6B7CF8FB398C5 /* Pods-GoogleBooksAPIProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleBooksAPIProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-GoogleBooksAPIProjectTests/Pods-GoogleBooksAPIProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A00D4F2FB523142344D58EDB /* Pods-GoogleBooksAPIProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleBooksAPIProject.release.xcconfig"; path = "Target Support Files/Pods-GoogleBooksAPIProject/Pods-GoogleBooksAPIProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		3F3A93E9222A7E5000C597C2 /* GoogleBooksAPIProject */ = {
 			isa = PBXGroup;
 			children = (
+				3FD498AD222A97FC00678F1E /* Views */,
 				3FD49878222A898F00678F1E /* Model */,
 				3F3A940C222A83E300C597C2 /* Helpers */,
 				3F3A940B222A7E7500C597C2 /* IBs */,
@@ -150,6 +153,14 @@
 				3FD4987B222A8D0900678F1E /* Volume.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3FD498AD222A97FC00678F1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FD498AE222A980800678F1E /* VolumeTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AC47160CB8721F1F24842189 /* Frameworks */ = {
@@ -354,6 +365,7 @@
 				3F3A93ED222A7E5000C597C2 /* ViewController.swift in Sources */,
 				3F3A940E222A83EC00C597C2 /* String+RequestNormalization.swift in Sources */,
 				3FD4987A222A8A5B00678F1E /* VolumeListResponse.swift in Sources */,
+				3FD498AF222A980800678F1E /* VolumeTableViewCell.swift in Sources */,
 				3FD498AC222A929C00678F1E /* DetailViewController.swift in Sources */,
 				3FD4987C222A8D0900678F1E /* Volume.swift in Sources */,
 				3F3A93EB222A7E5000C597C2 /* AppDelegate.swift in Sources */,

@@ -19,10 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44
     }
     
     @IBAction func tappedSearchButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Searching for a book", message:"What book are you looking for?" , preferredStyle: .alert)
+        let alert = UIAlertController(title: "Searching for a book",
+                                      message:"What book are you looking for?" ,
+                                      preferredStyle: .alert)
         alert.addTextField { textField in
             textField.placeholder = "Enter book name"
         }
@@ -97,8 +101,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)
-        cell.textLabel?.text = volumes[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! VolumeTableViewCell
+        cell.volumeTitleLabel.text = volumes[indexPath.row].title
         
         return cell
     }
