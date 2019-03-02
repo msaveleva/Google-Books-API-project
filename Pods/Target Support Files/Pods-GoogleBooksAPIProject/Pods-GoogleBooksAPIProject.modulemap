@@ -1,0 +1,6 @@
+framework module Pods_GoogleBooksAPIProject {
+  umbrella header "Pods-GoogleBooksAPIProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
