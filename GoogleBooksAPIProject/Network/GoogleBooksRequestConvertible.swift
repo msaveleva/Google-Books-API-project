@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum GoogleBookRequestConverible: URLRequestConvertible {
+enum GoogleBooksRequestConverible: URLRequestConvertible {
     enum Constants {
         static let BaseUrlPath = "https://www.googleapis.com/books/v1"
     }

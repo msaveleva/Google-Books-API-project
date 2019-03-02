@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
-class GoogleBookConnectionService {
+class GoogleBooksConnectionService {
     
-    static let shared = GoogleBookConnectionService()
+    static let shared = GoogleBooksConnectionService()
     
     private init() {}
     
@@ -22,7 +22,7 @@ class GoogleBookConnectionService {
             return
         }
         
-        Alamofire.request(GoogleBookRequestConverible.volumes(parameterString)).responseObject { (response: DataResponse<VolumeListResponse>) in
+        Alamofire.request(GoogleBooksRequestConverible.volumes(parameterString)).responseObject { (response: DataResponse<VolumeListResponse>) in
             guard response.result.isSuccess else {
                 completion(nil)
                 return

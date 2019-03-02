@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                     return
             }
 
-            GoogleBookConnectionService.shared.loadVolumesWithName(name: searchText, completion: { result in
+            GoogleBooksConnectionService.shared.loadVolumesWithName(name: searchText, completion: { result in
                 guard let volumeListResponse = result as? VolumeListResponse,
                         let volumes = volumeListResponse.items else {
                     return
