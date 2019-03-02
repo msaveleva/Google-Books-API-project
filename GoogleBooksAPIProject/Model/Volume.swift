@@ -13,7 +13,7 @@ class Volume: Mappable {
     var identifier: String!
     
     var title: String!
-    var authors: [String]!
+    var authors: [String]?
     var description: String?
     
     required init?(map: Map) {

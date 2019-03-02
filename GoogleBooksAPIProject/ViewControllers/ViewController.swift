@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                     return
             }
 
-            self?.fetchBooksWithName(name: searchText, completion: { result in
+            GoogleBookConnectionService.shared.loadVolumesWithName(name: searchText, completion: { result in
                 guard let volumeListResponse = result as? VolumeListResponse,
                         let volumes = volumeListResponse.items else {
                     return
@@ -53,33 +53,6 @@ class ViewController: UIViewController {
         alert.addAction(searchAction)
         
         present(alert, animated: true)
-    }
-    
-    private func fetchBooksWithName(name: String, completion: @escaping (Any?) -> Void) {
-        guard let parameterString = name.normalizeForSearchParameter(string: name) else {
-            completion(nil)
-            return
-        }
-        
-        let urlString = "https://www.googleapis.com/books/v1/volumes?q=\(parameterString)"
-        guard let url = URL(string: urlString) else {
-            completion(nil)
-            return
-        }
-        
-        Alamofire.request(url).responseObject { (response: DataResponse<VolumeListResponse>) in
-            guard response.result.isSuccess else {
-                completion(nil)
-                return
-            }
-
-            guard let value = response.result.value else {
-                completion(nil)
-                return
-            }
-
-            completion(value)
-        }
     }
     
     // MARK: - Segues
@@ -106,8 +79,4 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-}
-
-extension ViewController: UITableViewDelegate {
-    
 }

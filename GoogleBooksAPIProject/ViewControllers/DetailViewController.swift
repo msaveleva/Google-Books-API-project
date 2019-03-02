@@ -30,14 +30,17 @@ class DetailViewController: UIViewController {
         titleLabel.text = volume.title
         descriptionLabel.text = volume.description
         
-        var authors = ""
-        for (index, author) in volume.authors.enumerated() {
-            authors.append(author)
-            if index != volume.authors.count - 1 {
-                authors.append(", ")
+        var authorsString = ""
+        if let authors = volume.authors {
+            for (index, author) in authors.enumerated() {
+                authorsString.append(author)
+                if index != authors.count - 1 {
+                    authorsString.append(", ")
+                }
             }
         }
-        authorLabel.text = authors
+        
+        authorLabel.text = authorsString
     }
     
 }
