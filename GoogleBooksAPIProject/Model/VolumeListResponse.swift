@@ -10,15 +10,15 @@ import Foundation
 import ObjectMapper
 
 class VolumeListResponse: Mappable {
-    var kind: String!
     var totalItems: Int!
+    var items: [Volume]?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        kind <- map["kind"]
         totalItems <- map["totalItems"]
+        items <- map["items"]
     }
 }
