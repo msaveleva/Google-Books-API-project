@@ -14,7 +14,8 @@ Uses `Volume list` request (https://developers.google.com/books/docs/v1/referenc
 
 
 ## Further possible improvements
-- Implement pagination to show all founded results (use provided `startIndex` and response's `totalItems` value)
+- Add data loader indicator.
+- Implement pagination to show all founded results (use provided `startIndex` and response's `totalItems` value).
 - Implement of adaptive UI for DetailViewController (currently does not scroll, so in some cases not all content can fit the screen).
 - Inherit model from `ImmutableMappable` instead of `Mappable`. 
 - Add founded volumes to storage to enable offline access to them.
